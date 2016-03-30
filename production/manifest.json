@@ -1,0 +1,42 @@
+ {
+  "manifest_version": 2,
+  "name": "Preferable Coins",
+  "version": "1.0",
+
+ "background": {
+    "scripts": ["background.js"]
+  },
+
+  "permissions": [
+     "activeTab",
+     "storage",
+      "tabs"
+  ],
+
+  "icons": {
+    "16": "icon_16.png",
+    "32": "icon_32.png",
+    "48": "icon_48.png",
+    "128": "icon_128.png"
+  },
+
+ "browser_action": {
+        "default_title": "Project Zero",
+        "default_icon": "icon_128.png",
+        "default_popup": "popup.html"
+    },
+
+
+   "content_scripts": [
+    {
+      "matches": [
+        "http://www.kufar.by/*",
+        "https://www.kufar.by/*"
+       ],
+      "css": [ "price.css" ],
+      "js": ["jquery.js","content.js"],
+      "run_at": "document_end"
+    }
+  ]
+
+}

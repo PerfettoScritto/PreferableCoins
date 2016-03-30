@@ -1,0 +1,59 @@
+body{
+	width:220px;
+	/*height:200px;*/
+	height: 160px;
+	background: #18c5c0;
+	font-family:Helvetica;
+}
+
+hr {
+	background-color:white;
+	border:none;
+    height:2px;
+  }
+
+h1{
+	color:white;
+	font-size: 12px;
+	text-transform: uppercase;
+	padding-left: 20px;
+	font-weight:lighter;
+}
+label{
+	vertical-align: top;
+	line-height: 10px;
+    font-size: 15px;
+	color:white;
+}
+
+input[type=radio] {
+	    display:none;
+	}
+	input[type=radio] + label:before {
+	    content: "";
+	    display: inline-block;
+	    width: 12px;
+	    height: 12px;
+	    vertical-align:middle;
+	    margin-right: 8px;
+	    background-color: white;
+
+	    border-radius: 8px;
+	    margin-bottom: 12px;
+	}
+
+	input[type=radio]:checked + label:before {
+
+		content: "\2022";
+		color:orange;
+	    background-color: white;
+		font-size:1.5em;
+		text-align:center;
+		line-height:13px;
+        margin-bottom: 12px;
+
+	}
+form{
+	margin-top: 20px;
+}
+
