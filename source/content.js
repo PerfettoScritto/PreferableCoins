@@ -18,6 +18,8 @@ $(document).ready(function() {
 
         var discountPrice = document.querySelectorAll(".list_ads__price>.list_ads__discount");
 
+        var denominationPrice = document.querySelectorAll("span.adview_list__no_denom_price");
+
         if (discountPrice) {
 
             for (var k = 0; k < discountPrice.length; k++) {
@@ -26,11 +28,21 @@ $(document).ready(function() {
 
                 discountPrice[k].style.textDecoration = "none";
 
+                //Don't show temporarily discount price , because the right
+                //data is missing now
+               /* discountPrice[k].innerHTML = "<span class='endPrice' style='text-decoration:line-through'>" + discountPriceNumber + "</span>" + "<span style='font-size:14px;padding-right:12px;'>  " + currencySymbol(currency) + "</span> ";*/
+               discountPrice[k].innerHTML ="";
 
-                discountPrice[k].innerHTML = "<span class='endPrice' style='text-decoration:line-through'>" + discountPriceNumber + "</span>" + "<span style='font-size:14px;padding-right:12px;'>  " + currencySymbol(currency) + "</span> ";
 
                       }
                 }
+        if  (denominationPrice)   {
+              for (var a = 0; a < denominationPrice.length; a++) {
+                denominationPrice[a].style.display="none";
+
+              }
+
+        }
 
         if (pastCardPrice) {
 
@@ -38,9 +50,12 @@ $(document).ready(function() {
 
             pastCardPrice.parentNode.style.textDecoration = "none";
 
-            pastCardPrice.nextSibling.textContent = " ";
+           //Don't show temporarily discount price , because the right
+           //data is missing now
+           // pastCardPrice.nextSibling.textContent = " ";
 
-            pastCardPrice.innerHTML = "<span style='font-size:20px;color:grey;text-decoration:line-through'>" + pastCardPriceNumber + "</span>" + "<span style='font-size:22px;color:grey;padding-right:25px'> " + currencySymbol(currency) + "</span>";
+           /* pastCardPrice.innerHTML = "<span style='font-size:20px;color:grey;text-decoration:line-through'>" + pastCardPriceNumber + "</span>" + "<span style='font-size:22px;color:grey;padding-right:25px'> " + currencySymbol(currency) + "</span>";*/
+           pastCardPrice.innerHTML =" ";
 
                        }
 
@@ -134,11 +149,29 @@ function currencySymbol(symbol) {
 
 function getPrice(itemPrice, currencyRate) {
 
+    // var price = itemPrice.innerHTML.replace(/\s+/g, '');
+    // price = parseInt(price, 10);
+    // price = Math.round(price / currencyRate);
+    // price = formatNumber(price);
+    // return price;
+
+    // After denomination in Belarus 2016
+    //return array of rubles and copecks
     var price = itemPrice.innerHTML.replace(/\s+/g, '');
-    price = parseInt(price, 10);
-    price = Math.round(price / currencyRate);
+    price = price.match(/\d+/gi);
+    console.log(price);
+    price = (parseInt(price[0], 10)*100 + parseInt(price[1],10))/100;
+    if (currencyRate!=1) {
+    price = Math.round(price*10000/currencyRate);
     price = formatNumber(price);
-    return price;
+    return price;}
+     else {
+      price = Math.round(price/currencyRate);
+      price = formatNumber(price);
+      return price;
+     }
+
+
 
 }
 
