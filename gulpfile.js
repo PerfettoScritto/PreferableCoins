@@ -16,7 +16,7 @@ var dest ="production/";
 
 
 gulp.task("default", function() {
-
+console.log("hello");
 
 });
 

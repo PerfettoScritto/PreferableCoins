@@ -12,6 +12,7 @@ $(document).ready(function() {
 
         var currencyRate = currencyData.query.results.rate.Rate * 1;
 
+
         var cardPrice = document.querySelector("div.adview_subject__price>strong.adview_subject__amount");
 
         var pastCardPrice = document.querySelector(".adview_subject__discount>strong.adview_subject__amount");
@@ -159,11 +160,14 @@ function getPrice(itemPrice, currencyRate) {
     //return array of rubles and copecks
     var price = itemPrice.innerHTML.replace(/\s+/g, '');
     price = price.match(/\d+/gi);
-    console.log(price);
-    price = (parseInt(price[0], 10)*100 + parseInt(price[1],10))/100;
+    //console.log(price);
+    if(price[0]&&price[1]){
+    price = (parseInt(price[0], 10)*100 + parseInt(price[1],10))/100;}
+    else {price=parseInt(price[0], 10);}
     if (currencyRate!=1) {
     price = Math.round(price*10000/currencyRate);
     price = formatNumber(price);
+    // console.log(currencyRate);
     return price;}
      else {
       price = Math.round(price/currencyRate);
