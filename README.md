@@ -1,7 +1,7 @@
-####PreferableCoins
+#### PreferableCoins
 It is unofficial chrome extension for the site kufar.by, which helps you to see price of goods in your preferable currency. PreferableCoins fetches currency rates from API of the NBRB and currently only supports RUB, USD, EUR, BYR.
 
-######How to use it:
+###### How to use it:
 
 1. Download PreferableCoins and unpack zip.
 2. Copy production folder and paste it in any place on your hard drive.
