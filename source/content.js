@@ -4,13 +4,15 @@ $(document).ready(function() {
 
     var currency = localStorage.getItem("currency");
 
-    var YQL = "https://query.yahooapis.com/v1/public/yql?q=select+*+from+yahoo.finance.xchange+where+pair+=+%22" + currency + "BYR%22&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=";
+    var YQL = "https://www.nbrb.by/API/ExRates/Rates?Periodicity=0";
 
     $.getJSON(YQL, function(data) {
 
         var currencyData = data;
 
-        var currencyRate = currencyData.query.results.rate.Rate * 1;
+        console.log(currencyData);
+
+        var currencyRate = getCurrencyRate(currency, currencyData);
 
 
         var cardPrice = document.querySelector("div.adview_subject__price>strong.adview_subject__amount");
@@ -165,12 +167,12 @@ function getPrice(itemPrice, currencyRate) {
     price = (parseInt(price[0], 10)*100 + parseInt(price[1],10))/100;}
     else {price=parseInt(price[0], 10);}
     if (currencyRate!=1) {
-    price = Math.round(price*10000/currencyRate);
+    price = Math.round(price / currencyRate);
     price = formatNumber(price);
     // console.log(currencyRate);
     return price;}
      else {
-      price = Math.round(price/currencyRate);
+      price = Math.round(price / currencyRate);
       price = formatNumber(price);
       return price;
      }
@@ -187,4 +189,39 @@ function setDefaultCurrency(currency) {
     if (!localStorage.getItem("currency")) {
         localStorage.setItem("currency", currency);
     }
+}
+
+
+function getCurrencyRate(currency, currencyData) {
+
+    var currency = currency;
+    var currencyData = currencyData;
+    // console.log(currency);
+    // console.log(currencyData);
+    if (currency === "BYR") {
+        var currencyRate = 1;
+        return currencyRate;
+    }
+    for (var i = 0; i < currencyData.length; i++) {
+
+        if (currency === currencyData[i].Cur_Abbreviation && currency !== "RUB") {
+
+            console.log(" В настоящий момент валюта " + currency);
+
+            var currencyRate = currencyData[i].Cur_OfficialRate * 1;
+
+            console.log(currencyRate);
+
+            return currencyRate;
+
+        }
+
+        if (currency === currencyData[i].Cur_Abbreviation && currency === "RUB") {
+
+            var currencyRate = currencyData[i].Cur_OfficialRate / 100;
+            console.log(currencyRate);
+            return currencyRate;
+        }
+    }
+
 }
