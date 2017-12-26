@@ -1,59 +1,84 @@
-body{
-	width:220px;
-	/*height:200px;*/
-	height: 160px;
-	background: #18c5c0;
-	font-family:Helvetica;
+body {
+    /*width:220px;*/
+    width: 60px;
+    /*height:200px;*/
+    height: 160px;
+    /*background: #18c5c0;*/
+    /*background:#A52A2A;*/
+    /*background:transparent;*/
+    font-family: Helvetica;
+    margin: 0;
+    padding: 0;
 }
+
+
+
 
 hr {
-	background-color:white;
-	border:none;
-    height:2px;
-  }
-
-h1{
-	color:white;
-	font-size: 12px;
-	text-transform: uppercase;
-	padding-left: 20px;
-	font-weight:lighter;
+    background-color: white;
+    border: none;
+    height: 2px;
 }
-label{
-	vertical-align: top;
-	line-height: 10px;
-    font-size: 15px;
-	color:white;
+
+h1 {
+    color: white;
+    font-size: 12px;
+    text-transform: uppercase;
+    padding-left: 20px;
+    font-weight: lighter;
+}
+
+label {
+    vertical-align: top;
+    line-height: 10px;
+    font-size: 17px;
+    color: white;
+    /*color: #1A8B9D;*/
+    /*	font-weight: bold;*/
+    background: #c92a2a;
+    /*padding: 8px;*/
+    padding: 12px;
+
+    display: block;
 }
 
 input[type=radio] {
-	    display:none;
-	}
-	input[type=radio] + label:before {
-	    content: "";
-	    display: inline-block;
-	    width: 12px;
-	    height: 12px;
-	    vertical-align:middle;
-	    margin-right: 8px;
-	    background-color: white;
-
-	    border-radius: 8px;
-	    margin-bottom: 12px;
-	}
-
-	input[type=radio]:checked + label:before {
-
-		content: "\2022";
-		color:orange;
-	    background-color: white;
-		font-size:1.5em;
-		text-align:center;
-		line-height:13px;
-        margin-bottom: 12px;
-
-	}
-form{
-	margin-top: 20px;
+    display: none;
 }
 
+input[type=radio]+label:before {
+    content: "";
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    vertical-align: middle;
+    /* margin-right: 8px;*/
+    margin-right: 6px;
+    background-color: white;
+
+    border-radius: 8px;
+    /*margin-bottom: 12px;*/
+    margin-bottom: 4px;
+}
+
+input[type=radio]:checked+label:before {
+
+    content: "\2022";
+    color: orange;
+    background-color: white;
+    font-size: 1.5em;
+    text-align: center;
+    line-height: 13px;
+    /*margin-bottom: 2px;*/
+    /* margin-bottom: 12px;*/
+    margin-bottom: 8px;
+}
+
+form {
+    margin: 0;
+    padding: 0;
+    margin-top: 8px;
+    /* margin-bottom: 2px;*/
+    margin-bottom: 4px;
+    font-size: 4px;
+}
