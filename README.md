@@ -1,4 +1,5 @@
-#### PreferableCoins
+![PreferableCoins](source/icon_48.png)   **PreferableCoins**
+
 It is unofficial chrome extension for the site kufar.by, which helps you to see price of goods in your preferable currency. PreferableCoins fetches currency rates from API of the NBRB and currently only supports RUB, USD, EUR, BYR.
 
 ###### How to use it:
