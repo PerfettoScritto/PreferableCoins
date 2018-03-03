@@ -4,7 +4,7 @@ $(document).ready(function() {
 
     var currency = localStorage.getItem("currency");
 
-    var YQL = "https://www.nbrb.by/API/ExRates/Rates?Periodicity=0";
+    var YQL = "http://www.nbrb.by/API/ExRates/Rates?Periodicity=0";
 
     $.getJSON(YQL, function(data) {
 
