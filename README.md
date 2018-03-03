@@ -11,6 +11,11 @@ It is unofficial chrome extension for the site kufar.by, which helps you to see 
 5. Click Load unpacked extension and navigate to the production folder and select it.
 
 ***
+#### Attension
+
+Now You should allow Chrome to load unsafe scripts on this site. You will see a certificate warning, or  the content can't be displayed over HTTPS, because API for fetches currency rates uses HTTP instead HTTPS now.
+
+***
 #### License
 
 This project is licensed under the terms of the [MIT](https://opensource.org/licenses/MIT) license.
