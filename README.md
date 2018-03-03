@@ -13,7 +13,7 @@ It is unofficial chrome extension for the site kufar.by, which helps you to see 
 ***
 #### Attension
 
-Now You should allow Chrome to load unsafe scripts on this site. You will see a certificate warning, or  the content can't be displayed over HTTPS, because API for fetches currency rates uses HTTP instead HTTPS (secure version of HTTP) now.
+Now You should allow Chrome to load unsafe scripts on this site. You will see a certificate warning, or  the content can't be displayed over HTTPS, because API for fetching currency rates uses HTTP instead HTTPS (secure version of HTTP) now.
 
 ***
 #### License
