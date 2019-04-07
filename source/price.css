@@ -1,3 +1,28 @@
 /*
 style pages here
  */
+
+a.button-secondary {
+    margin-top: 15px !important;
+}
+
+/*span.src-components-cardRegion-style__goods_region_value--3hNXHuB2oE,
+span.src-components-cardRegion-style__goods_region_icon--32FwzBURMx{
+	margin-bottom: 30px !important;
+}*/
+
+span.src-components-cardPrice-style__price_byn__adview--LI54oDZlad {
+    visibility: hidden;
+}
+
+.price-block {
+
+    position: relative;
+    z-index: 1000 !important;
+    float: left;
+    margin-top: -410px;
+    margin-left: 1020px;
+    padding-top: 20px;
+    padding-left: 5px;
+
+}
