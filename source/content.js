@@ -78,7 +78,7 @@ $(document).ready(function() {
         }
 
 
-        var prices = document.querySelectorAll("span.card-price__price-byn");
+        var prices = document.querySelectorAll("span.kf-o-R-Ynlu");
 
 
 
@@ -240,6 +240,7 @@ function reloadPage() {
     // console.log(pagination);
     for (var i = 0; i < pagination.length; i++) {
         console.log(pagination[i]);
-        pagination[i].addEventListener("click", function() { setTimeout(function() { window.location.reload(); }, 500) })
+        pagination[i].addEventListener("click", function() { setTimeout(function() { window.location.reload(); }, 300) })
     }
 }
+
